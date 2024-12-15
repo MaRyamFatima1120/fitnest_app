@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../../common/constants/global_variable.dart';
-import '../../view_model/on_board_page/animated_controller.dart';
+import '../../view_model/on_board_page/onboard_controller.dart';
 
 class OnboardViewPage extends StatefulWidget {
   const OnboardViewPage({super.key});
@@ -14,13 +14,24 @@ class OnboardViewPage extends StatefulWidget {
 
 class _OnboardViewPageState extends State<OnboardViewPage> {
   final controller = OnboardingItems();
-  final AnimatedController animatedController=Get.find();
-  final PageController pageController = PageController();
+ final OnboardController onboardController=Get.find();
+  PageController? pageController;
+  int currentIndex=0;
+  double percentage=0.25;
 
   @override
   void initState() {
+    pageController=PageController(initialPage: 0);
     // TODO: implement initState
+
     super.initState();
+  }
+
+  @override
+  void dispose() {
+    pageController!.dispose();
+    // TODO: implement dispose
+    super.dispose();
   }
 
   @override
@@ -28,7 +39,8 @@ class _OnboardViewPageState extends State<OnboardViewPage> {
     return Scaffold(
       body: PageView.builder(
           itemCount: controller.items.length,
-          controller: pageController,
+          controller: onboardController.pageController,
+          onPageChanged: (index) => onboardController.onPageChanged(index, controller.items.length),
           physics: const NeverScrollableScrollPhysics(),
           itemBuilder: (context, index) {
             return Column(
@@ -58,52 +70,49 @@ class _OnboardViewPageState extends State<OnboardViewPage> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
-                      Stack(
-                        clipBehavior: Clip.none,
-                        alignment: Alignment.center,
-                        children: [
+                      Obx(()=>
+                         Stack(
+                          clipBehavior: Clip.none,
+                          alignment: Alignment.center,
+                          children: [
+                            SizedBox(
+                                  width: 70,
+                                  height: 70,
+                                  child: CircularProgressIndicator(
+                                    value:onboardController.percentage.value,
+                                    valueColor:  AlwaysStoppedAnimation<Color>(
+                                        colorScheme(context).primary),
+                                    backgroundColor: Colors.white, // Background color
+                                    strokeWidth: 3,
+                                  ),
+                                                             ),
 
-                             SizedBox(
-                              width: 70,
-                              height: 70,
-                              child: CircularProgressIndicator(
-                                value:animatedController.animationValue.value,
-                                valueColor:  AlwaysStoppedAnimation<Color>(
-                                    colorScheme(context).primary),
-                                backgroundColor: Colors.white, // Background color
-                                strokeWidth: 3,
-                              ),
-                            ),
 
-                          GestureDetector(
-                            onTap: (){
-                              animatedController.animatetoNextPage(
-                                pageController,
-                                index,
+                            GestureDetector(
+                              onTap:onboardController.nextPage,
 
-                              );
-                            },
-                            child: Container(
-                              width: 60,
-                              height: 60,
-                              decoration: BoxDecoration(
-                                shape: BoxShape.circle,
-                                gradient: LinearGradient(
-                                  colors: [colorScheme(context).primary, colorScheme(context).secondary],
-                                  begin: Alignment.topLeft,
-                                  end: Alignment.bottomRight,
+                              child: Container(
+                                width: 60,
+                                height: 60,
+                                decoration: BoxDecoration(
+                                  shape: BoxShape.circle,
+                                  gradient: LinearGradient(
+                                    colors: [colorScheme(context).primary, colorScheme(context).secondary],
+                                    begin: Alignment.topLeft,
+                                    end: Alignment.bottomRight,
+                                  ),
+                                ),
+                                child: const Center(
+                                  child: Icon(
+                                    Icons.arrow_forward_ios,
+                                    size: 16,
+                                    color: Colors.white,
+                                  ),
                                 ),
                               ),
-                              child: const Center(
-                                child: Icon(
-                                  Icons.arrow_forward_ios,
-                                  size: 16,
-                                  color: Colors.white,
-                                ),
-                              ),
-                            ),
-                          )
-                        ],
+                            )
+                          ],
+                        ),
                       ),
                     ],
                   ),

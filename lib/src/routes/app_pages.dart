@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import '../getx_binding/binding.dart';
 import '../view/onboarding_pages/onboard.dart';
 import '../view/onboarding_pages/onboard_page.dart';
+import '../view/registerPages/register_page.dart';
 import 'error_route.dart';
 
 class AppPage {
@@ -11,12 +12,17 @@ class AppPage {
         name: MyAppRouts.splashPage,
         page: () => const OnBoardPage(),
         transition: Transition.fade,
-        binding: BoardBinding()),
+       ),
     GetPage(
         name: MyAppRouts.onboardPage,
         page: () => const OnboardViewPage(),
         transition: Transition.fade,
         binding: BoardBinding()),
+    GetPage(
+        name: MyAppRouts.registerPage,
+        page: () => const RegisterPage(),
+        transition: Transition.fade,
+        ),
     GetPage(
         name: MyAppRouts.errorPage,
         page: () => const ErrorPage(),
