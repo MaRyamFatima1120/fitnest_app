@@ -36,7 +36,6 @@ class CustomTextField extends StatelessWidget {
         obscureText: obscureText,
         autocorrect: false,
         decoration: InputDecoration(
-
           hintText: hintText,
           hintStyle: textTheme(context).titleSmall?.copyWith(
                 fontSize: 14,
@@ -47,11 +46,13 @@ class CustomTextField extends StatelessWidget {
             child: icon,
           ),
           contentPadding: const EdgeInsets.symmetric(vertical: 14.0, horizontal: 12.0),
-          suffixIcon: Padding(
-            padding: const EdgeInsets.all(12.0),
-            child: suffixIcon,
-          ),
+          suffixIcon: suffixIcon,
           border: InputBorder.none,
+          errorStyle: textTheme(context).titleSmall?.copyWith(
+            fontSize: 11,
+            color: colorScheme(context).error,
+            fontWeight: FontWeight.w400,
+          ),
 
         ));
   }

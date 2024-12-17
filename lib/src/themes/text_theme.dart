@@ -31,7 +31,8 @@ TextTheme customTextTheme(BuildContext context){
             fontSize: 14,
             fontWeight: FontWeight.w400,
             color: lightColorScheme.onError
-        )
+        ),
+
     )
   );
 }

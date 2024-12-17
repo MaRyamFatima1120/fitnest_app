@@ -9,5 +9,6 @@ ThemeData appTheme(BuildContext context,) {
     textTheme: customTextTheme(context),
     primaryColor:  lightColorScheme.primary ,
     scaffoldBackgroundColor:  lightColorScheme.onPrimary,
+
   );
 }
