@@ -6,5 +6,6 @@ class AppImage{
   static const String burnImage="assets/images/onboard/burn.png";
   static const String facebook="assets/images/social/facebook.png";
   static const String google="assets/images/social/google.png";
+  static const String profileImage="assets/images/profile/profile.png";
 
 }

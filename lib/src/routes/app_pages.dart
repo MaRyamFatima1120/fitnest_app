@@ -1,4 +1,5 @@
 import 'package:fitnest_app/src/routes/route.dart';
+import 'package:fitnest_app/src/view/registerPages/profile_page.dart';
 import 'package:get/get.dart';
 import '../getx_binding/binding.dart';
 import '../getx_binding/register_binding.dart';
@@ -25,6 +26,12 @@ class AppPage {
         transition: Transition.fade,
       binding: RegisterBinding(),
         ),
+    GetPage(
+      name: MyAppRouts.profilePage,
+      page: () => const ProfilePage(),
+      transition: Transition.fade,
+
+    ),
     GetPage(
         name: MyAppRouts.errorPage,
         page: () => const ErrorPage(),

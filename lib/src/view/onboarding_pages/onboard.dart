@@ -86,8 +86,6 @@ class _OnboardViewPageState extends State<OnboardViewPage> {
                                     strokeWidth: 3,
                                   ),
                                                              ),
-
-
                             GestureDetector(
                               onTap:onboardController.nextPage,
 

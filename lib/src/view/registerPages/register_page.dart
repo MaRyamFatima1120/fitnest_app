@@ -191,6 +191,7 @@ class _RegisterPageState extends State<RegisterPage> {
                                   color: colorScheme(context).onSecondary,
                                 ),
                           ));
+                      Get.toNamed("/profile");
                     }
                   }
                 },
