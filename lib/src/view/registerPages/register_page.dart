@@ -2,12 +2,11 @@ import 'package:fitnest_app/common/constants/app_image.dart';
 import 'package:fitnest_app/common/constants/global_variable.dart';
 import 'package:fitnest_app/common/widgets/custom_text_field.dart';
 import 'package:fitnest_app/src/themes/color_scheme.dart';
-import 'package:fitnest_app/src/view_model/register_controller.dart';
+import 'package:fitnest_app/src/view_model/register/register_controller.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
-
 import '../../../common/constants/app_icon.dart';
 import '../../../common/constants/validation.dart';
 import '../../../common/widgets/custom_button.dart';

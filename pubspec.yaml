@@ -44,6 +44,8 @@ dependencies:
   firebase_auth: ^5.3.4
   cloud_firestore: ^5.5.1
   flutter_svg: ^2.0.16
+  syncfusion_flutter_datepicker: ^28.1.36
+  carousel_slider: ^5.0.0
 
 dev_dependencies:
   flutter_test:

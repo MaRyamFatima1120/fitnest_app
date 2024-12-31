@@ -1,6 +1,6 @@
 
 import 'package:get/get.dart';
-import '../view_model/register_controller.dart';
+import '../view_model/register/register_controller.dart';
 
 
 
