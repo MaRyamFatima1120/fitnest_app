@@ -114,7 +114,9 @@ class _GoalPageState extends State<GoalPage> {
                   height: Get.width * 0.05,
                 ),
                 CustomButton(
-                  pressed: () {},
+                  pressed: () {
+                    Get.toNamed("/login",);
+                  },
                   text: "Confirm",
                   width: Get.width * 0.8,
                   height: Get.height * 0.064,

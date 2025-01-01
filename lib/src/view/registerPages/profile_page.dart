@@ -30,12 +30,12 @@ class _ProfilePageState extends State<ProfilePage> {
         weight.text.isNotEmpty &&
         height.text.isNotEmpty &&
         controller.selectedGender.value.isNotEmpty) {
-      Get.toNamed("/goal", arguments: {
+      Get.toNamed("/goal"/*, arguments: {
         'gender': controller.selectedGender.value,
         'dob': date.text,
         'weight': weight.text,
         'height': height.text,
-      });
+      }*/);
     } else {
       print("Please fill all fields");
     }

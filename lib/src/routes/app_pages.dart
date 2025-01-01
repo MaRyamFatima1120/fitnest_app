@@ -1,7 +1,9 @@
 import 'package:fitnest_app/src/getx_binding/profie_binding.dart';
 import 'package:fitnest_app/src/routes/route.dart';
 import 'package:fitnest_app/src/view/registerPages/goal_page.dart';
+import 'package:fitnest_app/src/view/registerPages/login_page.dart';
 import 'package:fitnest_app/src/view/registerPages/profile_page.dart';
+import 'package:fitnest_app/src/view/registerPages/welcome_page.dart';
 import 'package:get/get.dart';
 import '../getx_binding/binding.dart';
 import '../getx_binding/register_binding.dart';
@@ -38,8 +40,16 @@ class AppPage {
       name: MyAppRouts.goalPage,
       page: () => const GoalPage(),
       transition: Transition.fade,
-
-
+    ),
+    GetPage(
+      name: MyAppRouts.welcomePage,
+      page: () => const WelcomePage(),
+      transition: Transition.fade,
+    ),
+    GetPage(
+      name: MyAppRouts.loginPage,
+      page: () => const LoginPage(),
+      transition: Transition.fade,
     ),
     GetPage(
         name: MyAppRouts.errorPage,

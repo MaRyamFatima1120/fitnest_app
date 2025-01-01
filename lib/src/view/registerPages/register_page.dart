@@ -258,6 +258,7 @@ class _RegisterPageState extends State<RegisterPage> {
                             ),
                         recognizer: TapGestureRecognizer()
                           ..onTap = () {
+                            Get.toNamed("/login");
                             print("Login");
                           }),
                   ],

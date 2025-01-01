@@ -8,4 +8,5 @@ class AppIcon{
   static const String swap="assets/icons/swap.svg";
   static const String user="assets/icons/user.svg";
   static const String weight="assets/icons/weight.svg";
+  static const String loginIcon="assets/icons/Login.svg";
 }
