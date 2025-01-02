@@ -11,5 +11,5 @@ class AppImage{
   static const String goal2Image="assets/images/profile/goal2.png";
   static const String goal3Image="assets/images/profile/goal3.png";
   static const String welcomeImage="assets/images/profile/welcome.png";
-
+  static const String dotsImage="assets/images/profile/dots_background.png";
 }

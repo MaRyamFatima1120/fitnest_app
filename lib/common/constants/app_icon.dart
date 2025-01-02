@@ -13,4 +13,5 @@ class AppIcon{
   static const String camera="assets/icons/Camera.svg";
   static const String activity="assets/icons/Activity.svg";
   static const String search="assets/icons/Search.svg";
+  static const String notificationIcon="assets/icons/notification.svg";
 }
