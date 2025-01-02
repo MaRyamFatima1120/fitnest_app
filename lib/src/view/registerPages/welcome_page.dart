@@ -40,7 +40,7 @@ class _WelcomePageState extends State<WelcomePage> {
             SizedBox(height:Get.height * 0.23 ,),
             CustomButton(
               pressed: () {
-
+                Get.toNamed("/main");
               },
               text: "Go To Home",
               width: Get.width * 0.8,

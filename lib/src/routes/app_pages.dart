@@ -6,7 +6,9 @@ import 'package:fitnest_app/src/view/registerPages/profile_page.dart';
 import 'package:fitnest_app/src/view/registerPages/welcome_page.dart';
 import 'package:get/get.dart';
 import '../getx_binding/binding.dart';
+import '../getx_binding/main_tab_binding.dart';
 import '../getx_binding/register_binding.dart';
+import '../view/dashboard_pages/main_tab/main_tab_view.dart';
 import '../view/onboarding_pages/onboard.dart';
 import '../view/onboarding_pages/onboard_page.dart';
 import '../view/registerPages/register_page.dart';
@@ -50,6 +52,12 @@ class AppPage {
       name: MyAppRouts.loginPage,
       page: () => const LoginPage(),
       transition: Transition.fade,
+    ),
+    GetPage(
+      name: MyAppRouts.mainPage,
+      page: () => const MainTabView(),
+      transition: Transition.fade,
+      binding: MainTabBinding(),
     ),
     GetPage(
         name: MyAppRouts.errorPage,
