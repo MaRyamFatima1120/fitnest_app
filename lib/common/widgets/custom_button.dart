@@ -7,9 +7,10 @@ class CustomButton extends StatelessWidget {
   final Color? bgColor;
   final TextStyle? style;
   final double? width;
-
+  final Color borderColor;
   final double? height;
-  final Gradient? gradient; // Add gradient property
+  final Gradient? gradient;
+  final Shadow? shadow;
 
   const CustomButton(
       {super.key,
@@ -20,8 +21,9 @@ class CustomButton extends StatelessWidget {
       this.height = 50.0,
       this.width = 150,
       this.child,
-        this.gradient
-      });
+      this.gradient,
+      this.borderColor = const Color(0xff98bafd),
+      this.shadow});
 
   @override
   Widget build(BuildContext context) {
@@ -34,9 +36,11 @@ class CustomButton extends StatelessWidget {
           color: bgColor, // Default background color
           gradient: gradient, // Apply gradient if provided
           borderRadius: BorderRadius.circular(100),
+
           border: Border.all(
-            color: Theme.of(context).colorScheme.primary,
+            color: borderColor,
           ),
+
         ),
         alignment: Alignment.center,
         child: child ??
@@ -44,8 +48,8 @@ class CustomButton extends StatelessWidget {
               text ?? 'Get',
               style: style ??
                   Theme.of(context).textTheme.bodySmall?.copyWith(
-                    color: Colors.white,
-                  ),
+                        color: Colors.white,
+                      ),
             ),
       ),
     );
