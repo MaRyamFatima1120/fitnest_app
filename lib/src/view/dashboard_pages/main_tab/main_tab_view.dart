@@ -18,7 +18,7 @@ class _MainTabViewState extends State<MainTabView> {
   final MainTabController controller = Get.find();
 
   final List<Widget> _pages = [
-    HomeView(),
+    const HomeView(),
     const Center(
       child: Text("View Page"),
     ),
@@ -124,11 +124,11 @@ class GradientIcon extends StatelessWidget {
 
   const GradientIcon(
     this.assetPath, {
-    Key? key,
+    super.key,
     required this.width,
     required this.height,
     required this.isSelected,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

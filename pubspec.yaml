@@ -46,6 +46,9 @@ dependencies:
   flutter_svg: ^2.0.16
   carousel_slider: ^5.0.0
   fl_chart: ^0.70.0
+  simple_animation_progress_bar: ^1.8.2
+  dotted_dashed_line: ^0.0.3
+  simple_circular_progress_bar: ^1.0.2
 
 
 dev_dependencies:
